@@ -1,0 +1,139 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body{
+  font: 1.6rem  Helvetica;
+  height: 100vh;
+  margin: 0;
+}      
+a{
+  text-decoration: none;
+}
+ul{
+  list-style-type: none;
+} 
+.container{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+/* header*/
+.header{
+  grid-area: header;
+  background-color: #011627;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+button{
+  font-size: 3rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logo-title >a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.header-links>a{
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0rem 1rem;
+}
+.header-links > a:hover{
+  color: #E71D36;
+}
+.sidebar{
+  position: fixed;
+  transition: all .5s;
+  transform: translateX(-30rem);
+  width: 30rem;
+  background-color: #f0f0f0;
+  height: 100%;
+}
+.sidebar.open{
+  transform: translate(0);
+}
+.sidebar-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close-button{
+  color: red;
+  border-radius: 50%;
+  border: .1rem solid #000;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  padding: 0 .5rem .5rem .5rem;
+  cursor: pointer;
+}
+/* header end */
+.main{
+  grid-area: main;
+}
+/*Product Card*/
+.products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.products>li{
+  flex: 0 1 34rem;
+  padding: 0;
+  margin: 1rem;
+  height: 50rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product-image{
+  max-width: 34rem;
+  max-height: 34rem;
+}
+.product-name{
+font-size: 2rem;
+font-weight: 700;
+
+}
+.product-name >a{
+  color: #000;
+}
+
+.product-category{
+  font-size: 1.2rem;
+  color: gray;
+}
+.product-price{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/*Product card end */
+.footer{
+  grid-area: footer;
+  background-color: #011627;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
