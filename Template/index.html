@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantaeshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+        <div class="logo-title">
+            <button onclick="openMenu()">
+                &#9776;
+            </button>
+            <a href="index.html">Plantaeshop</a>
+        </div>
+        <div class="header-links">
+            <a href="">Basket</a>
+            <a href="">Sign in</a>  
+        </div>        
+        </header>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                 <h3>Shopping Catagories</h3>
+            <button class="close-button" onclick="closeMenu()">x</button>
+            </div>
+           
+            <ul>
+                <li>
+                    <a href="index.html">Seeds</a>
+                    
+                </li>
+                <li>
+                    <a href="index.html">Plants</a>
+                </li>
+            </ul>
+        </aside>
+        <main class="main">
+            <div class="plants-product-display">
+                <ul class="products">
+                    <li>
+                        <div class="product">
+                            <a href="product.html"> <img class="product-image" src="image\products\product1.jpg" alt="Image of product"></a>
+                            <div class="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
+                            <div class="product-category">Seeds</div>
+                            <div class="product-price">$40.99</div>
+                            <div class="product-rating">4.5 stars</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <a href="product.html"> <img class="product-image" src="image\products\product1.jpg" alt="Image of product"></a>
+                            <div class="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
+                            <div class="product-category">Seeds</div>
+                            <div class="product-price">$40.99</div>
+                            <div class="product-rating">4.5 stars</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <a href="product.html"> <img class="product-image" src="image\products\product1.jpg" alt="Image of product"></a>
+                            <div class="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
+                            <div class="product-category">Seeds</div>
+                            <div class="product-price">$40.99</div>
+                            <div class="product-rating">4.5 stars</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <a href="product.html"> <img class="product-image" src="image\products\product1.jpg" alt="Image of product"></a>
+                            <div class="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
+                            <div class="product-category">Seeds</div>
+                            <div class="product-price">$40.99</div>
+                            <div class="product-rating">4.5 stars</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="product">
+                            <a href="product.html"> <img class="product-image" src="image\products\product1.jpg" alt="Image of product"></a>
+                            <div class="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
+                            <div class="product-category">Seeds</div>
+                            <div class="product-price">$40.99</div>
+                            <div class="product-rating">4.5 stars</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer class="footer">
+            &copy; All rights reserved 2020  
+        </footer>
+    </div>
+    <script>
+        const openMenu=()=>{
+            document.querySelector(".sidebar").classList.add("open");
+        }
+        const closeMenu=()=>{
+            document.querySelector(".sidebar").classList.remove("open");
+        }
+      
+    </script>
+</body>
+</html>
