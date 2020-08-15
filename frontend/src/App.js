@@ -1,7 +1,17 @@
 import React from 'react';
+import data from  './data';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import ProductPage from './pages/ProductPage';
+import HomePage from './pages/HomePage';
 import './App.css';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 function App() {
+
   const openMenu = () => {
     document.querySelector('.sidebar').classList.add('open');
   };
@@ -9,14 +19,15 @@ function App() {
     document.querySelector('.sidebar').classList.remove('open');
   };
   return (
+    <Router >
     <div className="container">
     <header className="header">
     <div className="logo-title">
     <button onClick={openMenu}>&#9776;</button>
-        <a href="index.html">Plantaeshop</a>
+        <Link to='/'>Plantaeshop</Link>
     </div>
     <div className="header-links">
-        <a href="">Basket</a>
+        <a className="basket-icon" href=""><ShoppingBasketIcon /></a>
         <a href="">Sign in</a>  
     </div>        
     </header>
@@ -38,59 +49,17 @@ function App() {
     </aside>
     <main className="main">
         <div className="plants-product-display">
-            <ul className="products">
-                <li>
-                    <div className="product">
-                        <a href="product.html"> <img className="product-image" src="image\product1.jpg" alt="Image of product" /></a>
-                        <div className="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
-                        <div className="product-category">Seeds</div>
-                        <div className="product-price">$40.99</div>
-                        <div className="product-rating">4.5 stars</div>
-                    </div>
-                </li>
-                <li>
-                    <div className="product">
-                        <a href="product.html"> <img className="product-image" src="image\product1.jpg" alt="Image of product" /></a>
-                        <div className="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
-                        <div className="product-category">Seeds</div>
-                        <div className="product-price">$40.99</div>
-                        <div className="product-rating">4.5 stars</div>
-                    </div>
-                </li>
-                <li>
-                    <div className="product">
-                        <a href="product.html"> <img className="product-image" src="image\product1.jpg" alt="Image of product" /></a>
-                        <div className="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
-                        <div className="product-category">Seeds</div>
-                        <div className="product-price">$40.99</div>
-                        <div className="product-rating">4.5 stars</div>
-                    </div>
-                </li>
-                <li>
-                    <div className="product">
-                        <a href="product.html"> <img className="product-image" src="image\product1.jpg" alt="Image of product" /></a>
-                        <div className="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
-                        <div className="product-category">Seeds</div>
-                        <div className="product-price">$40.99</div>
-                        <div className="product-rating">4.5 stars</div>
-                    </div>
-                </li>
-                <li>
-                    <div className="product">
-                        <a href="product.html"> <img className="product-image" src="image\product1.jpg" alt="Image of product" /></a>
-                        <div className="product-name"><a href="product.html">Alkarty Lotus Seeds</a></div>
-                        <div className="product-category">Seeds</div>
-                        <div className="product-price">$40.99</div>
-                        <div className="product-rating">4.5 stars</div>
-                    </div>
-                </li>
-            </ul>
+        <Route path="/product/:id" component={ProductPage} />
+          
+        <Route path="/" exact={true} component={HomePage} />
+          
         </div>
     </main>
     <footer className="footer">
         &copy; All rights reserved 2020  
     </footer>
 </div>
+</Router>
   );
 }
 
