@@ -47,7 +47,7 @@ ul{
    background: #f0c14b;
    width: 100%;
    color: #000;
-   
+   border-radius: 0.5rem;
 }
 .product-details li, .addtocart li {
     margin-bottom: 1rem;

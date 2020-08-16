@@ -1,5 +1,4 @@
 import React from 'react';
-import data from  './data';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import ProductPage from './pages/ProductPage';
 import HomePage from './pages/HomePage';
@@ -7,7 +6,6 @@ import HomePage from './pages/HomePage';
 import './App.css';
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
     Link
   } from "react-router-dom";

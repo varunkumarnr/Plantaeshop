@@ -30,7 +30,7 @@ function ProductPage(props) {
         <div className="addtocart">
              <ul>
                  <li>
-                     Price: {product.price}
+                     Price: ${product.price}
                  </li>
                  <li className="avalabilty">
                      {product.Avalabilty}
