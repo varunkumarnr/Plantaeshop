@@ -42,7 +42,12 @@ function ProductPage(props) {
                 <li className="product-price">Price:<span className="product-price-style">${product.price}</span> </li>
                 </div>
                 <li className="avalabilty">
-                     {product.Avalabilty}
+                    {
+                product.countInStock > 0 ?
+                 <div className="avalabilty"> In Stock</div>
+                
+                   : <div className="not-avaliable avalabilty"> out of stock</div>
+                    }
                  </li>
                 <li className="about-product">{product.descripton}</li>
                

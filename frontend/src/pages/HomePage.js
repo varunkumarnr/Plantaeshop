@@ -1,12 +1,9 @@
-
-import React, { useState ,  useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import { listProducts } from '../actions/productactions';
 
 function HomePage(props) {
-   
     const productList = useSelector(state => state.productList);
     const {products , loading ,error} = productList;
     const dispatch = useDispatch();

@@ -1,0 +1,10 @@
+.cartpage{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cart-items{
+    flex: 0.7;
+}
+.pay-section{
+    flex: 0.3;
+}

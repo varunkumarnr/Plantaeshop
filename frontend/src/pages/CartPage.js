@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import '../styles/cartpage.css';
 
 
 function CartPage(props) {
@@ -11,10 +11,13 @@ function CartPage(props) {
             <div className = "cart title">
                      Shopping Cart
             </div>
-
+            <div className="">
+                  
+            </div>
+                     
             </div>
             <div className="pay-section">
-
+                pay-section
             </div>
         </div>
     )
