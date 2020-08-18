@@ -1,17 +1,38 @@
-import React from 'react'
-import data from '../data';
-import StarIcon from '@material-ui/icons/Star';
+import React, { useEffect, useState } from 'react'
+
 import { Link } from 'react-router-dom';
 import '../styles/product.css'
+import { useSelector, useDispatch } from 'react-redux';
+import { detailsproduct } from '../actions/productactions';
 function ProductPage(props) {
-    console.log(props.match.params.id);
-    const product = data.products.find(x=>x.id === props.match.params.id)
+    const [qty ,setqty] = useState(1);
+    const [sendasgift, setsendasgift] = useState(false);
+    //console.log(qty);
+    const handleClick = () => setsendasgift(!sendasgift)
+    //console.log(sendasgift);
+    const productDetails = useSelector(state => state.productDetails);
+  const { product, loading, error } = productDetails;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(detailsproduct(props.match.params.id));
+    return () => {
+      //
+    };
+  }, []);
+  const  handleAddtocart = () => {
+      props.history.push("/cart/"+ props.match.params.id+"?qty="+qty)
+  } 
+
     return ( 
+        
         <div className="productpage">
       <div className="back">
             <Link to="/" ><p className="back-styling">back to results</p></Link>
       </div>
-      <div className="product-details">
+      {
+          loading?<div>loading...</div> : error ? <div>{error}</div>:(
+           <div className="product-details">
           <img className="productpage-image" src={product.image} alt={product.name}/>  
         <div className="product-desc">
             <ul>
@@ -33,27 +54,34 @@ function ProductPage(props) {
                      Price: ${product.price}
                  </li>
                  <li className="avalabilty">
-                     {product.Avalabilty}
+                 { product.countInStock > 0 ?
+                 <div className="avalabilty"> In Stock</div>
+                
+                   : <div className="not-avaliable avalabilty"> out of stock</div>
+                 }
                  </li>
                  <li>
-                     Qty: <select>
-                         <option>1</option>
-                         <option>2</option>
-                         <option>3</option>
-                         <option>4</option>
-                         <option>5</option>
+                     Qty: <select value={qty} onChange={(e)=>{setqty(e.target. value)}}>
+                     {[...Array(product.countInStock).keys()].map(x =>
+                      <option key={x + 1} value={x + 1}>{x + 1}</option>
+                    )}
+
                      </select>
                  </li>
-                 
-            
-             <button className="addcartbtn">
-                      Add to Cart
-            </button>
-            <li className="gift-check" ><input type="checkbox" name="gift"   value="gift"></input> Send as a gift </li>
+              { product.countInStock > 0 ?
+                  <button onClick={handleAddtocart} className="addcartbtn">
+                  Add to Cart
+                  </button> : <div className="not-avaliable avalabilty"> out of stock</div>
+              }
+             
+            <li className="gift-check" ><input type="checkbox" name="gift"   onChange={handleClick} checked={sendasgift}></input> Send as a gift </li>
             </ul>
 
         </div>
       </div>
+          )
+      }
+      
       </div>
     )
 }

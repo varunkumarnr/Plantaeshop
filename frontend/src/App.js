@@ -2,6 +2,7 @@ import React from 'react';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import ProductPage from './pages/ProductPage';
 import HomePage from './pages/HomePage';
+import CartPage from './pages/CartPage'
 
 import './App.css';
 import {
@@ -26,7 +27,7 @@ function App() {
         <Link to='/'>Plantaeshop</Link>
     </div>
     <div className="header-links">
-        <a className="basket-icon" href=""><ShoppingBasketIcon /></a>
+        <Link to='/cart/'><ShoppingBasketIcon /></Link>
         <a href="">Sign in</a>  
     </div>        
     </header>
@@ -49,7 +50,7 @@ function App() {
     <main className="main">
         <div className="plants-product-display">
         <Route path="/product/:id" component={ProductPage} />
-          
+        <Route path = "/cart/:id?" component= {CartPage} />
         <Route path="/" exact={true} component={HomePage} />
           
         </div>
