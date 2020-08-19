@@ -10,7 +10,7 @@ function ProductPage(props) {
     //console.log(qty);
     const handleClick = () => setsendasgift(!sendasgift)
     //console.log(sendasgift);
-    const productDetails = useSelector(state => state.productDetails);
+  const productDetails = useSelector(state => state.productDetails);
   const { product, loading, error } = productDetails;
   const dispatch = useDispatch();
 
