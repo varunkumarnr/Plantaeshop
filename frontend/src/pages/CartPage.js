@@ -39,7 +39,7 @@ function CartPage(props) {
                 <li className=" cart-container">
                       <img className = "cart-item-image" src = {item.image} ></img>
                       <div className="cart-item-desc">
-                      <h4 className="cart-item-name"> {item.name } </h4>
+                      <h4 className="cart-item-name"> {item.name} </h4>
                       </div>
                 </li>
             )
