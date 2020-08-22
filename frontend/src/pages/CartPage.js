@@ -15,7 +15,7 @@ function CartPage(props) {
     const dispatch = useDispatch();
     useEffect(()=>{
         if(productId){
-            dispatch(addtocart(productId,qty));
+            dispatch(addtocart(productId,qty)) ;
         }
     },[]);
     return (
